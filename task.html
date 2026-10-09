@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Study Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card form-card">
+        <h1>Add Study Task</h1>
+
+        <form onsubmit="saveTask(event)">
+            <label>Subject Name</label>
+            <input id="subject" type="text" placeholder="Enter subject" required>
+
+            <label>Study Date</label>
+            <input id="date" type="date" required>
+
+            <label>Study Time</label>
+            <input id="time" type="time" required>
+
+            <label>Priority</label>
+            <select id="priority">
+                <option>High</option>
+                <option selected>Medium</option>
+                <option>Low</option>
+            </select>
+
+            <button type="submit">Save Task</button>
+        </form>
+
+        <p id="message"></p>
+
+        <nav>
+            <a href="home.html">🏠 Home</a>
+            <a href="schedule.html">📅 Schedule</a>
+            <a href="progress.html">📊 Progress</a>
+        </nav>
+    </div>
+
+    <script>
+        function saveTask(event) {
+            event.preventDefault();
+
+            let task = {
+                subject: document.getElementById("subject").value,
+                date: document.getElementById("date").value,
+                time: document.getElementById("time").value,
+                priority: document.getElementById("priority").value
+            };
+
+            let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+            tasks.push(task);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+
+            document.getElementById("message").textContent =
+                "Task saved successfully!";
+
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

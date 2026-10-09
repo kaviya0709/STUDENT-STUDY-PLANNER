@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>STUDY PLANNER</h1>
+        <h2>Hi, Student! 👋</h2>
+        <p>Keep going! Your goals are within reach.</p>
+
+        <div class="stats">
+            <div class="card">Total Subjects<h2>5</h2></div>
+            <div class="card">Tasks Completed<h2 id="count">0</h2></div>
+        </div>
+
+        <h3>Today's Study Tasks</h3>
+        <div class="card">
+            <label><input type="checkbox" onchange="update()"> Java - 9:00 AM</label>
+        </div>
+        <div class="card">
+            <label><input type="checkbox" onchange="update()"> DBMS - 11:00 AM</label>
+        </div>
+        <div class="card">
+            <label><input type="checkbox" onchange="update()"> Maths - 2:00 PM</label>
+        </div>
+        <div class="card">
+            <label><input type="checkbox" onchange="update()"> Python - 4:00 PM</label>
+        </div>
+
+        <a class="btn" href="add-task.html">+ Add Study Task</a>
+
+        <nav>
+            <a href="home.html">🏠 Home</a>
+            <a href="schedule.html">📅 Schedule</a>
+            <a href="progress.html">📊 Progress</a>
+        </nav>
+    </div>
+
+    <script>
+        function update() {
+            let boxes = document.querySelectorAll('input[type="checkbox"]');
+            let total = 0;
+            boxes.forEach(box => {
+                if (box.checked) total++;
+            });
+            document.getElementById("count").textContent = total;
+        }
+    </script>
+</body>
+</html>

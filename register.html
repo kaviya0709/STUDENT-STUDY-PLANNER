@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card form-card">
+        <h2>Create New Account</h2>
+
+        <form onsubmit="register(event)">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Create password" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p id="message"></p>
+        <a href="index.html">Back to Login</a>
+    </div>
+
+    <script>
+        function register(event) {
+            event.preventDefault();
+            document.getElementById("message").textContent =
+                "Demo registration completed!";
+        }
+    </script>
+</body>
+</html>

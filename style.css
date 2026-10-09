@@ -1,0 +1,144 @@
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f1f6fc;
+    color: #173654;
+}
+
+.container {
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 12px 0;
+    border: 1px solid #d7e3f0;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #d5e2f0;
+}
+
+.login, .form-card {
+    max-width: 430px;
+    margin: 50px auto;
+    padding: 28px;
+}
+
+.login {
+    text-align: center;
+}
+
+.login h1 {
+    font-size: 55px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccd7e3;
+    border-radius: 8px;
+}
+
+button, .btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: #3185ef;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.stats {
+    display: flex;
+    gap: 12px;
+}
+
+.stats .card {
+    flex: 1;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+}
+
+nav a {
+    color: #2864a8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.days {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.days span {
+    background: #e4f1ff;
+    padding: 10px 5px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.days .active {
+    background: #3185ef;
+    color: white;
+}
+
+.progress {
+    height: 14px;
+    background: #dce8f5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    width: 0;
+    height: 100%;
+    background: #3185ef;
+}
+
+.chart {
+    height: 150px;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    border-bottom: 1px solid #ddd;
+}
+
+.chart div {
+    width: 25px;
+    background: #3185ef;
+    border-radius: 5px 5px 0 0;
+}
+
+@media (max-width: 500px) {
+    .container {
+        margin: 10px auto;
+        padding: 12px;
+    }
+
+    .stats {
+        gap: 5px;
+    }
+}

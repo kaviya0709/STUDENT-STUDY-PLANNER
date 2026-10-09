@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Progress Tracker</h1>
+
+        <div class="stats">
+            <div class="card">Daily Goal<h2>4 Hours</h2></div>
+            <div class="card">Completed<h2 id="completed">0</h2></div>
+        </div>
+
+        <h3>Study Progress</h3>
+        <div class="progress">
+            <div class="fill" id="fill"></div>
+        </div>
+        <p id="percentage">0%</p>
+
+        <div class="stats">
+            <div class="card">Tasks Completed<h2 id="done">0</h2></div>
+            <div class="card">Pending Tasks<h2 id="pending">0</h2></div>
+        </div>
+
+        <h3>Weekly Study Summary</h3>
+        <div class="chart">
+            <div style="height:40%"></div>
+            <div style="height:65%"></div>
+            <div style="height:85%"></div>
+            <div style="height:45%"></div>
+            <div style="height:70%"></div>
+            <div style="height:90%"></div>
+            <div style="height:55%"></div>
+        </div>
+        <p>Mon &nbsp; Tue &nbsp; Wed &nbsp; Thu &nbsp; Fri &nbsp; Sat &nbsp; Sun</p>
+
+        <nav>
+            <a href="home.html">🏠 Home</a>
+            <a href="schedule.html">📅 Schedule</a>
+            <a href="progress.html">📊 Progress</a>
+        </nav>
+    </div>
+
+    <script>
+        let tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+        let completed = tasks.filter(task => task.done).length;
+        let pending = tasks.length - completed;
+        let percent = tasks.length
+            ? Math.round(completed / tasks.length * 100)
+            : 0;
+
+        document.getElementById("completed").textContent = completed;
+        document.getElementById("done").textContent = completed;
+        document.getElementById("pending").textContent = pending;
+        document.getElementById("fill").style.width = percent + "%";
+        document.getElementById("percentage").textContent = percent + "%";
+    </script>
+</body>
+</html>
